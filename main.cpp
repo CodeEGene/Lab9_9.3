@@ -13,17 +13,15 @@ bool hasRun(int values[], int size);
 int main() {
 	srand(time(0));
 
-	for (int i = 0; i < arraySize; i++) {
-		randArray[i] = rollDice();
-	}
+	do {
+		for (int i = 0; i < arraySize; i++) {
+			randArray[i] = rollDice();
+		}
+		displayRun(randArray, arraySize);
+		cout << endl;
 
-	displayRun(randArray, arraySize);
-	if (hasRun(randArray, arraySize)) {
-		cout << endl << "Has Run";
-	}
-	else {
-		cout << endl << "Doesnt have run";
-	}
+	} while (!hasRun(randArray, arraySize));
+
 	return 0;
 }
 
